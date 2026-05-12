@@ -32,36 +32,47 @@
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const firebaseConfig = {
-        apiKey: "AIzaSyCMXH1_3080pOo2qxokT4WEdbw72SHfs_E",
-  		authDomain: "joao-barbosa.firebaseapp.com",
-  		projectId: "joao-barbosa",
-  		storageBucket: "joao-barbosa.firebasestorage.app",
-  		messagingSenderId: "1084184181601",
-  		appId: "1:1084184181601:web:e5d095a5c2f8bb70e26320"
+       apiKey: "AIzaSyCniiIW7y6XxgBVy5-MOKnvf985snjRlrg",
+  authDomain: "projeto3c-642f9.firebaseapp.com",
+  projectId: "projeto3c-642f9",
+  storageBucket: "projeto3c-642f9.firebasestorage.app",
+  messagingSenderId: "962305450865",
+  appId: "1:962305450865:web:dbca7ffd956f2682bb0cd0",
+  measurementId: "G-WSKV7F27WC"
     };
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    const form = document.getElementById("formUsuario");
+    const form = document.getElementById("formulario");
     const mensagem = document.getElementById("mensagem");
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const cpf = document.getElementById("cpf").value;
-      const nome = document.getElementById("nome").value;
-      const email = document.getElementById("email").value;
-      const telefone = document.getElementById("telefone").value;
-      const senha = document.getElementById("senha").value;
+      const Nome = document.getElementById("nome").value;
+      const CEP = document.getElementById("cep").value;
+      const CPF = document.getElementById("cpf").value;
+      const Data_nascimento = document.getElementById("data_nascimento").value;
+      const Email = document.getElementById("email").value;
+      const Foto = document.getElementById("foto").value;
+      const Idade = document.getElementById("idade").value;
+      const RG = document.getElementById("rg").value;
+      const Senha = document.getElementById("senha").value;
+      const Telefone = document.getElementById("telefone").value;
 
       try {
         await addDoc(collection(db, "usuarios"), {
-          cpf,
-          nome,
-          email,
-          telefone,
-          senha
+          Nome,
+          CEP,
+          CPF,
+          Data_nascimento,
+          Email,
+          Foto,
+          Idade,
+          RG,
+          Senha,
+          Telefone
         });
 
         mensagem.textContent = "Usuário salvo com sucesso.";
@@ -75,19 +86,19 @@
   </script>
      </head>
     <body>
-      <form method="POST" action="">
-      <fieldset>
+      <form id="formulario">
+      <fieldset
           <legend>Cadastro de Usuarios</legend>
-                    <p class="texto">NOME COMPLETO:</p> <input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">CEP:</p> <input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">CPF: </p><input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">DATA DE NASCIMENTO:</p> <input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">EMAIL:</p> <input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">FOTO:</p> <input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">IDADE: </p><input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">RG:</p> <input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">SENHA: </p><input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
-                    <p class="texto">TELEFONE:</p><input type="text" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" requ ired><br>                                                                                                                                    
+ lk                   <p class="texto">NOME COMPLETO:</p> <input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">CEP:</p> <input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">CPF: </p><input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">DATA DE NASCIMENTO:</p> <input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">EMAIL:</p> <input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">FOTO:</p> <input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">IDADE: </p><input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">RG:</p> <input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">SENHA: </p><input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" required><br>
+                    <p class="texto">TELEFONE:</p><input type="text" id="" class="campo" placeholder="Nome de usuario" minlength="10" maxlength="20" id="nome" class="nome" name="nome" requ ired><br>                                                                                                                                    
         <input type="submit" value="Cadastrar">
       </fieldset>
       </form>
